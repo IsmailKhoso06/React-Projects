@@ -1,19 +1,22 @@
 import React from 'react';
 import styles from './Items.module.css';
+import { useState } from 'react';
 
 function Items({vegetable}) {
 
-  const handleOnClickBuy = (event) => {
-    console.log(event)
-    console.log(`${vegetable} is being bought`)
+  const [liBg, setLiBg] = useState('white');
+
+  const handleOnClickBuy = () => {
+    const newBgColor = liBg === 'white' ? 'red' : 'white';
+    setLiBg(newBgColor);
   }
 
   return (
     <>
-     <li className="list-group-item">
+     <li className="list-group-item" style={{background: liBg }}>
             {vegetable}
             <button className={`${styles.buyBtn} btn btn-info`}
-            onClick={(event) => handleOnClickBuy (event)}
+            onClick={handleOnClickBuy}
             >Buy</button>
           </li>  
     </>

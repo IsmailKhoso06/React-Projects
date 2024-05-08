@@ -11,7 +11,7 @@ function App() {
     return "Healthy Foods";
   };
 
-  const [text, setText] = useState("Hello World");
+
   const [vegetables, setVegetables] = useState([
     "Green Vegetables",
     "Milk",
@@ -39,7 +39,7 @@ function App() {
         <h1 className={styles.heading}>These are {fullName()}</h1>
         {vegetables.length === 0 && <h3>I am Still Hungry</h3>}
         <FoodInput handleOnChange={handleOnChange} />
-        <p>{text}</p>
+        
         <FoodItems vegetables={vegetables} />
       </Container>
       <Container>
