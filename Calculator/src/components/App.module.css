@@ -1,0 +1,35 @@
+.calculator{
+    border: 2px solid grey;
+    padding: 10px;
+    width: 300px;
+}
+
+.display{
+    margin: 10px;
+    width: 80%;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: 2px solid grey;
+    font-size: 25px;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    font-size: 25px;
+    margin: 5px 5px;
+    background: none;
+    color: white;
+    border: none;
+    background-color: green;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+button:hover{
+    background-color: rgb(6, 58, 6);
+}
