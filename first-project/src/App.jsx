@@ -6,23 +6,25 @@ import { useState } from "react";
 
 function App() {
   // let vegetables = []
-  const vegetables = [
-    "Green Vegetables",
-    "Milk",
-    "Eggs",
-    "Olive Oil",
-    "Apples",
-  ];
 
   let fullName = () => {
     return "Healthy Foods";
   };
 
   const [text, setText] = useState("Hello World");
+  const [vegetables, setVegetables] = useState([
+    "Green Vegetables",
+    "Milk",
+    "Eggs",
+    "Olive Oil",
+    "Apples",
+  ]);
   
   const handleOnChange = (event) => {
     if(event.key === 'Enter'){
       let newFood = event.target.value;
+      let newFoods = [...vegetables, newFood];
+      setVegetables(newFoods);
       console.log("Entered Item is " + newFood)
     }
 
