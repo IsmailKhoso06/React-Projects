@@ -21,9 +21,15 @@ function App() {
   const [text, setText] = useState("Hello World");
   
   const handleOnChange = (event) => {
-    console.log(event.target.value);
-    setText(event.target.value);
+    if(event.key === 'Enter'){
+      let newFood = event.target.value;
+      console.log("Entered Item is " + newFood)
+    }
+
+    // console.log(event.target.value);
+    // setText(event.target.value);
   };
+
   
   return (
     <>
