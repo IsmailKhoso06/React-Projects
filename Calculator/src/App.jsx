@@ -1,8 +1,24 @@
+import { useState } from 'react';
 import styles from './components/App.module.css'
 
 
 
 function App() {
+
+  const [calVal, setCalVal] = useState("");
+
+   const handleOnClick = (event) => {
+    if (event.target.innerHTML === "C") {
+      setCalVal("");
+    } else if(event.target.innerHTML === "="){
+      const result = eval(calVal);
+      setCalVal(result);
+    } else {
+      const setNewDisplayValue = calVal + event.target.innerHTML;
+      setCalVal(setNewDisplayValue);
+    }
+   }
+
 
   const calculatorButtons = [
     { label: '1', value: '1' },
@@ -17,7 +33,7 @@ function App() {
     { label: '0', value: '0' },
     { label: '+', value: '+', className: 'operator' },
     { label: '-', value: '-', className: 'operator' },
-    { label: '×', value: '*', className: 'operator' },
+    { label: '*', value: '*', className: 'operator' },
     { label: '÷', value: '/', className: 'operator' },
     { label: '=', value: '=', className: 'equal' },
     { label: 'C', value: 'clear', className: 'clear' }
@@ -28,10 +44,10 @@ function App() {
     <>
     <center>
       <div className={styles.calculator}>
-        <input className={styles.display} type='text' placeholder='0'/>
+        <input className={styles.display} type='text' placeholder='0' value={calVal} readOnly/>
         <div className={styles.buttonsContainer}>
         {calculatorButtons.map(button => (
-        <button key={button.value} className={`button ${button.className || ''}`}>
+        <button key={button.value} className={`button ${button.className || ''}`} onClick={handleOnClick}>
           {button.label}
         </button>
       ))}
