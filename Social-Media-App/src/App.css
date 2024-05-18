@@ -1,0 +1,11 @@
+.content{
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.main-card{
+  justify-content: space-evenly;
+}
